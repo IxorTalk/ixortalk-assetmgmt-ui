@@ -30,6 +30,7 @@ export default class AssetDetail extends React.Component {
                       formData={this.state.formData}
                       onChange={log("changed")}
                       liveValidate={true}
+                      noHtml5Validate={true}
                       onSubmit={this.props.submitAsset}
                       onError={log("errors")}/> )
 
