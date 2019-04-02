@@ -1,6 +1,12 @@
-const schemaPropertyNames = [
-    'port'
-]
+const arr = []
+
+for (var key in window.config.assetmgmt.columns) {
+    if (window.config.assetmgmt.columns.hasOwnProperty(key)) {
+        arr.push(key);
+    }
+}
+
+const schemaPropertyNames = arr
 
 const reducerState = (store) => store.schema
 export const isFetching = (store) => reducerState(store).get('fetching')
