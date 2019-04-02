@@ -6,7 +6,7 @@ export const isFetched = (store) => reducerState(store).get('fetched')
 export const stale = (store) => reducerState(store).get('stale')
 export const schema = (store) => reducerState(store).get('schema')
 
-export const columNames = (store) => {
+export const columns = (store) => {
     const schemaObject = schema(store)
     if (!schemaObject) return
     const schemaProperties = schemaObject.definitions.properties.properties
