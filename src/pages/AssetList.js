@@ -34,7 +34,6 @@ function mapStateToProps(store) {
         isSchemaFetching: isSchemaFetching(store),
         isSchemaFetched: isSchemaFetched(store),
         columnNames: columNames(store),
-        possibleColumnNames: possibleColumnNames(store),
     }
 }
 
@@ -114,7 +113,7 @@ class AssetList extends React.Component {
                                         key={asset.assetId.value}
                                         deleteAsset={this.deleteAsset(asset.assetId)}
                                         asset={asset}
-                                        assetProperties={this.props.possibleColumnNames}/>
+                                        assetProperties={this.props.columnNames}/>
                                 )}
                                 </tbody>
                             </table>
