@@ -15,8 +15,8 @@ export default class Asset extends React.Component {
 
       const assetData = Object.keys(asset.assetProperties.properties)
 
-      const assetTableData = assetProperties.map((property) =>
-          <td key={property} >{asset.assetProperties.properties[property]}</td>
+      const assetTableData = assetProperties.map(({key}) =>
+          <td key={key} >{asset.assetProperties.properties[key]}</td>
       )
 
        return (

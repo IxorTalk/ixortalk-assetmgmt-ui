@@ -9,10 +9,9 @@ import {Link} from 'react-router'
 import Asset from '../components/Asset'
 import DeleteModal from '../components/DeleteModal'
 import {
-    columNames,
+    columns,
     isFetched as isSchemaFetched,
-    isFetching as isSchemaFetching,
-    possibleColumnNames
+    isFetching as isSchemaFetching
 } from "../selectors/schemaSelectors";
 import {
     assets,
@@ -33,14 +32,13 @@ function mapStateToProps(store) {
         assetsError: error(store),
         isSchemaFetching: isSchemaFetching(store),
         isSchemaFetched: isSchemaFetched(store),
-        columnNames: columNames(store),
-        possibleColumnNames: possibleColumnNames(store),
+        columns: columns(store),
     }
 }
 
 class AssetList extends React.Component {
 
-    state = {columnNames: null}
+    state = {columns: null}
 
     constructor(props) {
         super(props)
@@ -103,8 +101,8 @@ class AssetList extends React.Component {
                                 <tr>
                                     <th/>
                                     <th>Hostname</th>
-                                    {this.props.columnNames.map((property) =>
-                                        <th key={property}>{property}</th>
+                                    {this.props.columns.map((property) =>
+                                        <th key={property.key}>{property.label || property.key}</th>
                                     )}
                                 </tr>
                                 </thead>
@@ -114,7 +112,7 @@ class AssetList extends React.Component {
                                         key={asset.assetId.value}
                                         deleteAsset={this.deleteAsset(asset.assetId)}
                                         asset={asset}
-                                        assetProperties={this.props.possibleColumnNames}/>
+                                        assetProperties={this.props.columns}/>
                                 )}
                                 </tbody>
                             </table>
