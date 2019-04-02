@@ -1,12 +1,4 @@
-const arr = []
-
-for (var key in window.config.assetmgmt.columns) {
-    if (window.config.assetmgmt.columns.hasOwnProperty(key)) {
-        arr.push(key);
-    }
-}
-
-const schemaPropertyNames = arr
+const schemaPropertyNames = window.config.assetmgmt.columns.map(e => e.key)
 
 const reducerState = (store) => store.schema
 export const isFetching = (store) => reducerState(store).get('fetching')
