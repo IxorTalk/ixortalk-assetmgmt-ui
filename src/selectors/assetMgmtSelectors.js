@@ -1,11 +1,3 @@
-// {
-//     assets: [],
-//     fetching: false,
-//     fetched: false,
-//     stale: true,
-//     error: null,
-// }
-
 const reducerState = (store) => store.assets
 export const isFetching = (store) => reducerState(store).get('fetching')
 export const isFetched = (store) => reducerState(store).get('fetched')

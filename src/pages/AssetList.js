@@ -104,7 +104,7 @@ class AssetList extends React.Component {
                                     <th/>
                                     <th>Hostname</th>
                                     {this.props.columnNames.map((property) =>
-                                        <th key={property}>{property}</th>
+                                        <th key={property.key}>{property.label || property.key}</th>
                                     )}
                                 </tr>
                                 </thead>

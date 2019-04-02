@@ -1,8 +1,8 @@
 window.config = {
     assetmgmt: {
         columns: [
-            {key: 'hostname'},
-            {key: 'port'}
+            {key: 'hostname', label: 'Hostname'},
+            {key: 'port', label : 'Port'}
         ]
     }
 }
