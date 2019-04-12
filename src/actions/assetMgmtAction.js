@@ -2,7 +2,7 @@ import axios from 'axios'
 
 export function fetchAssets() {
   return function (dispatch) {
-    axios.get('/assetmgmt/assets')
+    axios.get('/assetmgmt/assets?size=500')
       .then((response) => {
         dispatch({type: 'FETCH_ASSETS_FULFILLED', payload: response.data._embedded.assets})
       })
