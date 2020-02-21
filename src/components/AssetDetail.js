@@ -4,6 +4,8 @@ import {Link} from "react-router"
 
 import Form from "react-jsonschema-form";
 
+import {uiSchema} from "../config/config";
+
 const log = (type) => console.log.bind(console, type);
 
 export default class AssetDetail extends React.Component {
@@ -27,12 +29,13 @@ export default class AssetDetail extends React.Component {
         if (this.props.schema) {
             return (
                 <Form schema={this.props.schema}
+                      uiSchema={uiSchema}
                       formData={this.state.formData}
                       onChange={log("changed")}
                       liveValidate={true}
                       noHtml5Validate={true}
                       onSubmit={this.props.submitAsset}
-                      onError={log("errors")}/> )
+                      onError={log("errors")}/>)
 
         } else {
             return (<div/>)
