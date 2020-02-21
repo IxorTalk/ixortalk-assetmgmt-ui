@@ -4,5 +4,12 @@ window.config = {
             {key: 'hostname', label: 'Hostname'},
             {key: 'port', label : 'Port'}
         ]
+    },
+
+    uiSchema: {
+        assetProperties: {
+            properties: {
+            }
+        }
     }
-}
+};
