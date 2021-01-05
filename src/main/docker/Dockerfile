@@ -21,7 +21,7 @@
 # KIND, either express or implied.
 #
 
-FROM nginx:1.13.9-alpine
+FROM nginx:1.19.6-alpine
 
 ADD docker-entrypoint.sh /
 ADD healthcheck.sh /
